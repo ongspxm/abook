@@ -555,13 +555,6 @@ Pros:
 
 * Increased testability as the dependancy (Dictionary object) _can be controlled_ since it is passed into the constructor.
 
-// tag::dataencryption[]
-=== [Proposed] Data Encryption
-
-_{Explain here how the data encryption feature will be implemented}_
-
-// end::dataencryption[]
-
 === Logging
 
 We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations.
