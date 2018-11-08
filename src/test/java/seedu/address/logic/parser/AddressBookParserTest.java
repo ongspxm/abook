@@ -4,6 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
+import static seedu.address.logic.commands.CommandTestUtil.DURATION_FACEBOOK;
+import static seedu.address.logic.commands.CommandTestUtil.SUBTITLE_DESC_FACEBOOK;
+import static seedu.address.logic.commands.CommandTestUtil.TITLE_DESC_FACEBOOK;
+import static seedu.address.testutil.TypicalEntrys.WORK_FACEBOOK;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_ENTRY;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 
@@ -22,6 +26,8 @@ import seedu.address.logic.commands.ContextCommand;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
+import seedu.address.logic.commands.EditEntryInfoCommand.EditEntryInfoDescriptor;
+import seedu.address.logic.commands.EditEntryInfoCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.HelpCommand;
@@ -31,6 +37,7 @@ import seedu.address.logic.commands.MakeCommand;
 import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.SelectEntryCommand;
 import seedu.address.logic.commands.UndoCommand;
+import seedu.address.logic.commands.exceptions.DeleteEntryCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
@@ -65,12 +72,29 @@ public class AddressBookParserTest {
     }
 
     @Test
+    public void parseCommand_deleteEntry() throws Exception {
+        DeleteEntryCommand command = (DeleteEntryCommand) parser.parseCommand(
+                DeleteEntryCommand.COMMAND_WORD + " " + INDEX_FIRST_ENTRY.getOneBased());
+        assertEquals(new DeleteEntryCommand(INDEX_FIRST_ENTRY), command);
+    }
+
+    @Test
     public void parseCommand_edit() throws Exception {
         Person person = new PersonBuilder().build();
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder(person).build();
         EditCommand command = (EditCommand) parser.parseCommand(EditCommand.COMMAND_WORD + " "
                 + INDEX_FIRST_PERSON.getOneBased() + " " + PersonUtil.getEditPersonDescriptorDetails(descriptor));
         assertEquals(new EditCommand(INDEX_FIRST_PERSON, descriptor), command);
+    }
+
+    @Test
+    public void parseCommand_editEntryInfo() throws Exception {
+        EditEntryInfoDescriptor descriptor = new EditEntryInfoDescriptor(WORK_FACEBOOK);
+        String userInput = INDEX_FIRST_ENTRY.getOneBased()
+                + TITLE_DESC_FACEBOOK + SUBTITLE_DESC_FACEBOOK + DURATION_FACEBOOK;
+        EditEntryInfoCommand command = (EditEntryInfoCommand) parser
+                .parseCommand(EditEntryInfoCommand.COMMAND_WORD + " " + userInput);
+        assertEquals(new EditEntryInfoCommand(INDEX_FIRST_ENTRY, descriptor), command);
     }
 
     @Test

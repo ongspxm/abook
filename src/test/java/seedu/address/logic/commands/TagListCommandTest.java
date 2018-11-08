@@ -17,13 +17,16 @@ import seedu.address.logic.CommandHistory;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
+import seedu.address.model.awareness.Awareness;
 
 /**
  * Contains integration tests (interaction with the Model) for {@code TagListCommand}.
  */
 public class TagListCommandTest {
-    private Model model = new ModelManager(getTypicalAddressBook(), getTypicalEntryBook(), new UserPrefs());
-    private Model expectedModel = new ModelManager(getTypicalAddressBook(), getTypicalEntryBook(), new UserPrefs());
+    private Model model = new ModelManager(getTypicalAddressBook(), getTypicalEntryBook(), new UserPrefs(),
+                                                   new Awareness());
+    private Model expectedModel = new ModelManager(getTypicalAddressBook(), getTypicalEntryBook(), new UserPrefs(),
+                                                           new Awareness());
     private CommandHistory commandHistory = new CommandHistory();
 
     @Test
@@ -53,7 +56,7 @@ public class TagListCommandTest {
         String category = "";
         List<String> tags = new ArrayList<>();
 
-        int count = 4;
+        int count = 5;
 
         String expectedMessage = String.format(MESSAGE_ENTRIES_LISTED_OVERVIEW, count);
         TagListCommand command = new TagListCommand(category, tags);
@@ -67,7 +70,7 @@ public class TagListCommandTest {
         String category = "work";
         List<String> tags = new ArrayList<>();
 
-        int count = 1;
+        int count = 2;
 
         String expectedMessage = String.format(MESSAGE_ENTRIES_LISTED_OVERVIEW, count);
         TagListCommand command = new TagListCommand(category, tags);
@@ -82,7 +85,7 @@ public class TagListCommandTest {
         List<String> tags = new ArrayList<>();
         tags.add("java");
 
-        int count = 1;
+        int count = 2;
 
         String expectedMessage = String.format(MESSAGE_ENTRIES_LISTED_OVERVIEW, count);
         TagListCommand command = new TagListCommand(category, tags);
