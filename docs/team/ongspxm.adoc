@@ -32,9 +32,9 @@ Instead of having to reinsert entries, addition tag management functions have be
 ** Project management:
 *** Managed merging of PR and handling of repository cleanups
 ** Enhancements to existing features:
-*** Extended model functions (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/187[#187], https://github.com/CS2103-AY1819S1-W17-1/main/pull/171[#171])
+*** Extended model functions (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/187[#187])
 *** Refactored existing address book classes (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/171[#171])
-*** Created EntryBook and corresponding testing utilities (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/171[#171])
+*** Created EntryBook and corresponding testing utilities (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/87[#87])
 *** Developed command sub parser pattern (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/174[#174])
 ** Documentation:
 *** Did cosmetic tweaks to existing contents of the User Guide (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/262[#262])
