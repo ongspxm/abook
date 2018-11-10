@@ -38,10 +38,10 @@ Instead of having to reinsert entries, addition tag management functions have be
 *** Developed command sub parser pattern (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/174[#174])
 ** Documentation:
 *** Did cosmetic tweaks to existing contents of the User Guide (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/262[#262])
-*** Included details on tags and category implementation (https://github.com/CS2103-AY1819S1-W17-1/main/pull/170[#170], https://github.com/CS2103-AY1819S1-W17-1/main/pull/54[#54])
+*** Included details on tags and category implementation (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/170[#170], https://github.com/CS2103-AY1819S1-W17-1/main/pull/54[#54])
 ** Community:
-*** PRs reviewed (with non-trivial review comments): https://github.com/CS2103-AY1819S1-W17-1/main/pull/45[#45], https://github.com/CS2103-AY1819S1-W17-1/main/pull/253[#253]
-*** Reported bugs and suggestions F10-4 in PE Dry Run: https://github.com/CS2103-AY1819S1-F10-4/main/issues?q=is%3Aissue+PE+Dry+Run+ongspxm[(PR #219, #225, #232, #237, #239, #243, #245, #249)]
+*** PRs reviewed (with non-trivial review comments): (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/45[#45], https://github.com/CS2103-AY1819S1-W17-1/main/pull/253[#253])
+*** Reported bugs and suggestions F10-4 in PE Dry Run: (PR https://github.com/CS2103-AY1819S1-F10-4/main/issues?q=is%3Aissue+PE+Dry+Run+ongspxm[#219, #225, #232, #237, #239, #243, #245, #249])
 ** Tools:
 *** Integrated a third party tool (RepoSense) to the project (PR https://github.com/CS2103-AY1819S1-W17-1/main/pull/101[#101])
 
